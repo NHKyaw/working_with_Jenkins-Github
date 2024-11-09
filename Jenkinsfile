@@ -12,6 +12,7 @@ pipeline {
             steps {
                 sh 'cd /var/jenkins_home/workspace/To-Do-App/Jenkins_lab && docker build -t getting-started .'
                 sh 'docker stop to-do-app'
+                sh 'docker rm to-do-app'
                 sh 'docker run -dp 3000:3000 --name=to-do-app getting-started'
             }
         }
